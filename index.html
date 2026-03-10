@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stone Rose Watercolor Workshop — April 4</title>
+  <meta name="description" content="Join us for a beautiful watercolor painting workshop. Friday, April 4 at 2 PM · 8803 Saxon Ct.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Watercolor background blobs -->
+  <div class="bg-blob bg-blob--pink"  aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--green" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--gold"  aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <!-- ── Hero ── -->
+    <header class="hero">
+      <p class="hero__eyebrow">You're invited to</p>
+
+      <h1 class="hero__title">
+        Stone Rose<br>
+        <em>Watercolor Workshop</em>
+      </h1>
+
+      <div class="hero__details">
+        <span class="hero__detail-item">
+          <span class="detail-icon">🗓</span>
+          Friday, April 4, 2025
+        </span>
+        <span class="hero__detail-item">
+          <span class="detail-icon">🕑</span>
+          2:00 PM
+        </span>
+        <span class="hero__detail-item">
+          <span class="detail-icon">📍</span>
+          8803 Saxon Ct
+        </span>
+      </div>
+
+      <div class="floral-divider" aria-hidden="true">✿ ❀ ✿</div>
+    </header>
+
+    <!-- ── Sign-Up Card ── -->
+    <main>
+      <div class="card">
+
+        <!-- Form -->
+        <form id="signupForm" class="form" novalidate>
+          <h2 class="card__title">Reserve Your Seat</h2>
+          <p class="card__subtitle">We can't wait to paint with you.</p>
+
+          <!-- Name -->
+          <div class="form__group">
+            <label class="form__label" for="name">
+              Full Name <span class="required">*</span>
+            </label>
+            <input
+              class="form__input"
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Your full name"
+            >
+          </div>
+
+          <!-- Email -->
+          <div class="form__group">
+            <label class="form__label" for="email">
+              Email Address <span class="required">*</span>
+            </label>
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="your@email.com"
+            >
+          </div>
+
+          <!-- Phone -->
+          <div class="form__group">
+            <label class="form__label" for="phone">Phone Number</label>
+            <input
+              class="form__input"
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="(555) 000-0000"
+            >
+          </div>
+
+          <!-- Dietary Preferences -->
+          <div class="form__group">
+            <label class="form__label">Dietary Preferences</label>
+            <div class="checkbox-group" role="group" aria-label="Dietary preferences">
+              <label class="checkbox-label">
+                <input type="checkbox" name="glutenFree" id="glutenFree">
+                <span class="checkbox-custom" aria-hidden="true"></span>
+                Gluten Free
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="dairyFree" id="dairyFree">
+                <span class="checkbox-custom" aria-hidden="true"></span>
+                Dairy Free
+              </label>
+            </div>
+          </div>
+
+          <!-- Add-Ons -->
+          <div class="form__group">
+            <label class="form__label">Add-Ons</label>
+            <div class="checkbox-group" role="group" aria-label="Add-ons">
+              <label class="checkbox-label">
+                <input type="checkbox" name="espresso" id="espresso">
+                <span class="checkbox-custom" aria-hidden="true"></span>
+                ☕ Espresso Drinks
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="extraKit" id="extraKit">
+                <span class="checkbox-custom" aria-hidden="true"></span>
+                🎨 Extra Take-Home Painting Kit
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span>Reserve My Spot</span>
+          </button>
+
+          <p class="form__note">A confirmation email will be sent right away.</p>
+        </form>
+
+        <!-- Success State (hidden until submission) -->
+        <div id="successMessage" class="success-message hidden" role="status" aria-live="polite">
+          <div class="success-icon">🌸</div>
+          <h3>You're in!</h3>
+          <p>
+            Thank you, <strong id="confirmedName"></strong>!<br>
+            A confirmation has been sent to your email.
+          </p>
+          <p>
+            We'll see you on <strong>Friday, April 4 at 2:00 PM</strong><br>
+            at <strong>8803 Saxon Ct</strong>.
+          </p>
+          <br>
+          <div class="floral-divider" aria-hidden="true">✿ ❀ ✿</div>
+          <p style="margin-top:14px;font-style:italic;color:var(--text-light)">
+            Bring your creativity — we'll bring the rest.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+      <div class="floral-divider" aria-hidden="true">✿ ❀ ✿</div>
+      <p>Stone Rose Watercolor Workshop &nbsp;·&nbsp; 8803 Saxon Ct &nbsp;·&nbsp; April 4, 2025</p>
+    </footer>
+
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- App scripts (config must come first) -->
+  <script src="js/config.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

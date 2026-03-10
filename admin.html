@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Stone Rose Workshop</title>
+  <!-- Noindex this page so it doesn't appear in search engines -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Watercolor background blobs -->
+  <div class="bg-blob bg-blob--pink"  aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--green" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--gold"  aria-hidden="true"></div>
+
+  <!-- ── Password Modal ── -->
+  <div id="passwordModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal__icon">🔒</div>
+      <h2 id="modalTitle">Admin Access</h2>
+      <p>Enter the password to view workshop sign-ups.</p>
+      <form id="passwordForm">
+        <input
+          class="form__input"
+          type="password"
+          id="passwordInput"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        >
+        <p id="passwordError" class="modal__error hidden">Incorrect password. Try again.</p>
+        <button type="submit" class="btn-submit"><span>Enter</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── Dashboard (hidden until authenticated) ── -->
+  <div id="dashboard" class="page-wrapper hidden">
+
+    <!-- Header -->
+    <header class="hero" style="padding-bottom:28px">
+      <p class="hero__eyebrow">Admin</p>
+      <h1 class="hero__title" style="font-size:clamp(1.8rem,5vw,2.6rem)">
+        Stone Rose <em>Workshop</em>
+      </h1>
+      <div class="hero__details">
+        <span class="hero__detail-item">
+          <span class="detail-icon">🗓</span> Friday, April 4, 2025
+        </span>
+        <span class="hero__detail-item">
+          <span class="detail-icon">🕑</span> 2:00 PM
+        </span>
+        <span class="hero__detail-item">
+          <span class="detail-icon">📍</span> 8803 Saxon Ct
+        </span>
+      </div>
+      <div class="floral-divider" aria-hidden="true">✿ ❀ ✿</div>
+    </header>
+
+    <!-- Stats -->
+    <section aria-label="Summary statistics">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card__number" id="totalCount">0</div>
+          <div class="stat-card__label">Total RSVPs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number" id="glutenFreeCount">0</div>
+          <div class="stat-card__label">Gluten Free</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number" id="dairyFreeCount">0</div>
+          <div class="stat-card__label">Dairy Free</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number" id="espressoCount">0</div>
+          <div class="stat-card__label">Espresso Add-on</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number" id="extraKitCount">0</div>
+          <div class="stat-card__label">Extra Kit</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signups Table -->
+    <div class="card" style="overflow:visible">
+      <div class="admin-actions">
+        <h2>Sign-Ups</h2>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn-secondary" id="exportBtn">Export CSV</button>
+          <button class="btn-secondary" id="clearBtn" style="border-color:var(--text-light);color:var(--text-light)">Clear All</button>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="empty-state hidden">
+        <div class="empty-state__icon">🌱</div>
+        <h3>No sign-ups yet</h3>
+        <p>Share the sign-up page and check back soon!</p>
+      </div>
+
+      <!-- Table -->
+      <div id="tableWrap" class="table-wrap hidden">
+        <table class="signups-table" aria-label="Workshop sign-ups">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Dietary</th>
+              <th>Add-Ons</th>
+              <th>Signed Up</th>
+            </tr>
+          </thead>
+          <tbody id="signupTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="floral-divider" aria-hidden="true">✿ ❀ ✿</div>
+      <p><a href="index.html" style="color:var(--rose);text-decoration:none">← Back to sign-up page</a></p>
+    </footer>
+
+  </div>
+
+  <!-- App scripts (config must come first) -->
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
