@@ -361,6 +361,21 @@ body {
   font-style: italic;
 }
 
+/* ── Price Badge ─────────────────────────────────────────────────────────── */
+.price-badge {
+  display: inline-block;
+  margin: 0 auto 8px;
+  padding: 6px 20px;
+  background: linear-gradient(135deg, var(--rose-pale), #fff0f4);
+  border: 1.5px solid var(--rose-light);
+  border-radius: 50px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+  text-align: center;
+}
+
 /* ── Venmo Box ───────────────────────────────────────────────────────────── */
 .venmo-box {
   display: flex;
